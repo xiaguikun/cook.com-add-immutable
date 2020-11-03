@@ -12,6 +12,10 @@ const Container=styled.div`
         line-height:50px;
         color:white;
         font-size:16px;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:1;
     }
 `
 
@@ -21,6 +25,7 @@ const SwiperStyle=styled.div`
     width:90%;
     height: 200px;
     margin:10px auto;
+    margin-top:60px;
     img{
         width:100%;
         height:200px;

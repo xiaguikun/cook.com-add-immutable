@@ -57,9 +57,7 @@ class App extends Component {
                             </Route>
                         </Switch>
                     </CSSTransition>
-                </TransitionGroup>        
-
-
+                </TransitionGroup>       
             </>
         );
     }

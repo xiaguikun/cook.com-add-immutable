@@ -1,34 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {DivRecommed} from './StyledComponents';
-import memoize from 'memoize-one';
-import {useHistory} from 'react-router-dom'
+
+import useGetData from './useGetData';
+import useToDetail from './useToDetail';
+
 
 const Recommed=(props)=> {
-const history=useHistory();
 
-    const [state,setState]=useState({
-      type:1
-    })
-
-    
-
-   const filter=memoize(
-        (list,type)=>{
-              return list.filter(item=>{
-                return item.type===type
-              })
-        }
-   )
-  const handleClick=(num)=>()=>{
-    setState({
-      type:num
-    })
-  }
-  const toDetail=(id,title)=>()=>{
-   history.push('/detail/'+id,{title:title})
-}
+  const {handleClick,filterList,state}=useGetData(props);
+  const {toDetail} =useToDetail();
+ 
     // console.log(this.props);
-    const filterList=filter(props.recommendList,state.type)
+    
     // console.log(filterList);
     return (
       <DivRecommed>

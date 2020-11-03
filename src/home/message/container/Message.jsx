@@ -1,44 +1,38 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
 import MessageUi from '../ui/MessageUi';
 
 
-import {connect} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import {getMessageList} from '../actionCreator';
 
-const mapStateToProps=(state)=>{
-    return {
-        messageList:state.messageReducer.messageList,
-        urlPrefix:state.messageReducer.urlPrefix
-    }
-}
 
-const mapDispatchToProps=(dispatch)=>{
-    return {
-        getMessage(){
-            dispatch(getMessageList())
-        }
-    }
-}
+const Message=()=>{
 
-@connect(mapStateToProps,mapDispatchToProps)
-class Message extends Component {
-    state = {  }
-    render() {
-        // console.log(this.props);
+    const dispatch=useDispatch();
+    const store=useSelector(state=>state)
+
+        useEffect(()=>{
+            dispatch(getMessageList());
+        },[dispatch])
+
+
         return (
-            <MessageUi {...this.props}></MessageUi>
+            <MessageUi {...store.getIn(['messageReducer']).toJS()}></MessageUi>
         );
     }
-    componentDidMount(){
-        // console.log(this.props);
-        this.props.getMessage();
 
-        // axios.get('http://rootbk.cn:5000/api/messages/list')
-        // .then((res)=>{
-        //     console.log(res);
-        // })
-    }
-}
+   
+
+
+    // componentDidMount(){
+    //     // console.log(this.props);
+    //     this.props.getMessage();
+
+    //     // axios.get('http://rootbk.cn:5000/api/messages/list')
+    //     // .then((res)=>{
+    //     //     console.log(res);
+    //     // })
+    // }
 
 export default Message;

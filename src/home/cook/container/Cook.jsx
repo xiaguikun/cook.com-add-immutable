@@ -16,7 +16,8 @@ const Cook = () => {
     },[dispatch])
     // console.log(store);
     return (
-        <Cooks {...store.cookReducer}></Cooks>
+        // <Cooks {...store.cookReducer}></Cooks>
+        <Cooks {...store.getIn(['cookReducer']).toJS()}></Cooks>
     );
 }
 

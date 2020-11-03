@@ -7,6 +7,7 @@ import {Message} from './message/index';
 import { TabBar } from 'antd-mobile';
 import {changeTabData} from './actionCreator';
 
+
 import cookImg from '@img/img11.jpg';
 import cookActiveImg from '@img/img1.jpg';
 import shareImg from '@img/img22.jpg';
@@ -72,7 +73,8 @@ const Home=()=> {
                         background: `url(${cookActiveImg}) center center /  28px 28px no-repeat` }}
                         />
                         }
-                        selected={store.homeReducer.selectedTab === 'cook'}
+                        // selected={store.homeReducer.selectedTab === 'cook'}
+                        selected={store.getIn(['homeReducer','selectedTab']) === 'cook'}
                         onPress={() => {
                         // this.setState({
                         //     selectedTab: 'cook',
@@ -85,6 +87,7 @@ const Home=()=> {
                     >
                         {/* {this.renderContent('Life')} */}
                         <Cook></Cook>
+                        {/* <div>cooks</div> */}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
@@ -102,7 +105,8 @@ const Home=()=> {
                         />
                         }
                         key="Koubei"
-                        selected={store.homeReducer.selectedTab === 'share'}
+                        // selected={store.homeReducer.selectedTab === 'share'}
+                        selected={store.getIn(['homeReducer','selectedTab']) === 'share'}
                         onPress={() => {
                         // this.setState({
                         //     selectedTab: 'share',
@@ -132,7 +136,8 @@ const Home=()=> {
                         />
                         }
                         key="Friend"
-                        selected={store.homeReducer.selectedTab === 'message'}
+                        // selected={store.homeReducer.selectedTab === 'message'}
+                        selected={store.getIn(['homeReducer','selectedTab']) === 'message'}
                         onPress={() => {
                         // this.setState({
                         //     selectedTab: 'message',
@@ -144,12 +149,14 @@ const Home=()=> {
                     >
                         {/* {this.renderContent('Friend')} */}
                         <Message></Message>
+                        {/* <div>mssage</div> */}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={{ uri: mineImg }}
                         selectedIcon={{ uri: mineActiveImg}}
                         key="my"
-                        selected={store.homeReducer.selectedTab === 'mine'}
+                        // selected={store.homeReducer.selectedTab === 'mine'}
+                        selected={store.getIn(['homeReducer','selectedTab']) === 'mine'}
                         onPress={() => {
                         // this.setState({
                         //     selectedTab: 'mine',
