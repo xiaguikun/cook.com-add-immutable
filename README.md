@@ -57,4 +57,16 @@
 
     react中解构出 useState useEffect useContext
 
+### 添加immutable管理数据
+    immutable 是一种数据修改方式  持久化数据结构，结构共享
+    1.首先在总的store文件夹中的
+        reducer文件中import { combineReducers } from 'redux' 替换为 import {combineReducers} from 'redux-immutable';
+        index文件中，引入import Immutable from 'immutable';   const initialState=Immutable.Map()  
+            并将initialState作为createStore()的第二个参数传入
+    2.在模块的redux中
+        reducer修改数据时用return state.set('selectedTab',action.tab);或者 return state.mergeDeep(action); 要把defaultState数据转换成Map Lists结构，用fromJS直接转化
+        在组件中拿数据的时候 {...store.getIn(['cookReducer']).toJS()}  拿到传下去
+
+
+
 
