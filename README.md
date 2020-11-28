@@ -67,6 +67,52 @@
         reducer修改数据时用return state.set('selectedTab',action.tab);或者 return state.mergeDeep(action); 要把defaultState数据转换成Map Lists结构，用fromJS直接转化
         在组件中拿数据的时候 {...store.getIn(['cookReducer']).toJS()}  拿到传下去
 
+### 配置
+    ```
+    {
+    "editor.wordWrap": "on",
+    "files.autoSave": "off",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontSize": 16,
+    "less.compile": {
+        "out":"..\\css\\"    
+    },
+    "window.zoomLevel": 0,
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjowLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.iconTheme": "vscode-icons",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "iceworks.materialSources": [],
+    "iceworks.workspace": "e:\\浩鲸新智能\\项目个人",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.runtime": "",
+    //个人配置https://github.com/DCLangX/howToAutoFixTypescript
+    // eslint配置项，保存时自动修复
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // 默认使用prettier格式化支持的文件
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 自动设定eslint工作区
+    "eslint.workingDirectories": [
+        { "mode": "auto" }
+    ],
+  
+    }
+
+    ```
+
 
 
 
